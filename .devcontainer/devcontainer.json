@@ -1,5 +1,7 @@
 {
   "name": "Mit Freuden Website",
   "image": "mcr.microsoft.com/devcontainers/javascript-node:1-22",
-  "runArgs": ["--name", "${localWorkspaceFolderBasename}"]
+  "runArgs": ["--name", "${localWorkspaceFolderBasename}"],
+  "forwardPorts": [4321],
+  "postCreateCommand": "npm install"
 }
