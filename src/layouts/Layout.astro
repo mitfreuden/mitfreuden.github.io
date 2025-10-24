@@ -10,6 +10,8 @@ interface Props {
 const { title, description, lang } = Astro.props;
 
 const canonicalURL = `https://mitfreuden.com${Astro.url.pathname}`;
+const siteName = 'Mit Freuden';
+
 const currentPath = Astro.url.pathname.replace(/^\/en/, '/') || '/';
 ---
 
@@ -19,6 +21,22 @@ const currentPath = Astro.url.pathname.replace(/^\/en/, '/') || '/';
     <title>{title}</title>
     <link rel="canonical" href={canonicalURL} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={canonicalURL} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:site_name" content={siteName} />
+    <meta property="og:locale" content={lang === 'de' ? 'de_DE' : 'en_US'} />
+    <meta property="og:locale:alternate" content={lang === 'de' ? 'en_US' : 'de_DE'} />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:url" content={canonicalURL} />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
