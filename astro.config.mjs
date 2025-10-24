@@ -7,6 +7,15 @@ import tailwindcss from '@tailwindcss/vite';
 export default defineConfig({
   site: 'https://mitfreuden.com',
 
+  i18n: {
+    locales: ['de', 'en'],
+    defaultLocale: 'en',
+    routing: {
+      prefixDefaultLocale: true,
+      redirectToDefaultLocale: false
+    }
+  },
+
   server: {
     host: true,
     allowedHosts: true

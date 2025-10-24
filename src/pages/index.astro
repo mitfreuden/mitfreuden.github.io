@@ -1,11 +1,27 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
+const title = 'Mit Freuden';
+const description = 'What brings joy to life? That\'s right: it\'s really, really well-made software. We think so too.';
 
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+const canonicalURL = `https://mitfreuden.com`;
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="en">
+<head>
+  <title>{title}</title>
+  <link rel="canonical" href={canonicalURL} />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <meta charset="UTF-8" />
+  <meta name="description" content={description} />
+
+  <script>
+    window.location.replace(navigator.language.startsWith('de') ? '/de' : '/en');
+  </script>
+
+  <noscript>
+    <meta http-equiv="refresh" content="0; url=/en" />
+  </noscript>
+</head>
+<body>
+</body>
+</html>
