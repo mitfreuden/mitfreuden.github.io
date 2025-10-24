@@ -1,22 +1,51 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
-	</head>
-	<body>
-		<slot />
-	</body>
-</html>
+---
+import { getRelativeLocaleUrl } from 'astro:i18n';
 
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
+interface Props {
+  title: string;
+  description: string;
+  locale: 'de' | 'en';
+}
+
+const { title, description, locale } = Astro.props;
+
+const canonicalURL = `https://mitfreuden.com${Astro.url.pathname}`;
+const currentPath = Astro.url.pathname.replace(/^\/en/, '/') || '/';
+
+---
+
+<!doctype html>
+<html lang={locale}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content={description} />
+
+    <title>{title}</title>
+    <link rel="canonical" href={canonicalURL} />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  </head>
+  <body class="bg-orange-50 text-gray-900">
+    <div class="min-h-screen flex flex-col">
+      <header class="container mx-auto px-4 sm:px-6 lg:px-8 pt-4 max-w-4xl">
+        <nav class="flex justify-end gap-2 text-sm">
+          <a href={getRelativeLocaleUrl("de", currentPath)} class={`hover:underline ${locale === 'de' ? 'underline' : ''}`}>de</a>
+          <a href={getRelativeLocaleUrl("en", currentPath)} class={`hover:underline ${locale === 'en' ? 'underline' : ''}`}>en</a>
+        </nav>
+      </header>
+
+      <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 max-w-4xl">
+        <slot />
+      </main>
+
+      <footer class="bg-white border-t border-gray-200 py-6">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center text-gray-600 text-sm">
+          <p>&copy; 2025 Mit Freuden.</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>

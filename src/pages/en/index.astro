@@ -1,0 +1,22 @@
+---
+import '../../styles/global.css'
+
+import Layout from '../../layouts/Layout.astro';
+
+const title = 'Mit Freuden';
+const description = 'What brings joy to life? That\'s right: it\'s really, really well-made software. We think so too.';
+---
+
+<Layout title={title} description={description} locale="en">
+  <article class="prose prose-lg max-w-none">
+    <h1 class="text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6">
+      Mit Freuden
+    </h1>
+
+    <p class="text-lg sm:text-xl text-gray-700 mb-6">
+      What brings joy to life?
+      That's right: it's really, <em>really</em> well-made software.
+      We think so too.
+    </p>
+  </article>
+</Layout>
