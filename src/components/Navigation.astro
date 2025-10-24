@@ -1,0 +1,98 @@
+---
+import { navigationConfig, type Locale } from '../config/navigation';
+
+interface Props {
+  locale: Locale;
+}
+
+const { locale } = Astro.props;
+
+const navLinks = navigationConfig[locale].map(item => ({
+  label: item.label,
+  href: `#${item.anchor}`
+}));
+---
+
+<nav class="nav-container">
+  <!-- Hamburger button (mobile only) -->
+  <button 
+    class="hamburger md:hidden flex flex-col gap-1.5 w-8 h-8 justify-center items-center"
+    aria-label="Toggle menu"
+    aria-expanded="false"
+  >
+    <span class="hamburger-line w-6 h-0.5 bg-gray-900 transition-all duration-300"></span>
+    <span class="hamburger-line w-6 h-0.5 bg-gray-900 transition-all duration-300"></span>
+    <span class="hamburger-line w-6 h-0.5 bg-gray-900 transition-all duration-300"></span>
+  </button>
+
+  <!-- Navigation links -->
+  <div class="nav-links hidden md:flex gap-2">
+    {navLinks.map(link => (
+      <a href={link.href} class="hover:underline transition-colors">
+        {link.label}
+      </a>
+    ))}
+  </div>
+
+  <!-- Mobile menu -->
+  <div class="mobile-menu fixed inset-0 bg-orange-50 z-40 hidden flex-col items-center justify-center gap-8 text-2xl">
+    {navLinks.map(link => (
+      <a href={link.href} class="hover:underline transition-colors mobile-menu-link">
+        {link.label}
+      </a>
+    ))}
+  </div>
+</nav>
+
+<style>
+  /* Keep hamburger above mobile menu */
+  .hamburger {
+    position: relative;
+    z-index: 50;
+  }
+
+  /* Hamburger animation when open */
+  .hamburger.is-open .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+  
+  .hamburger.is-open .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+  
+  .hamburger.is-open .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Mobile menu visibility */
+  .mobile-menu.is-open {
+    display: flex;
+  }
+</style>
+
+<script>
+  const hamburger = document.querySelector('.hamburger');
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
+  
+  if (hamburger && mobileMenu) {
+    hamburger.addEventListener('click', () => {
+      const isOpen = hamburger.classList.toggle('is-open');
+      mobileMenu.classList.toggle('is-open');
+      hamburger.setAttribute('aria-expanded', isOpen.toString());
+      
+      // Prevent body scroll when menu is open
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+    
+    // Close menu when a link is clicked
+    mobileMenuLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        hamburger.classList.remove('is-open');
+        mobileMenu.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+</script>
