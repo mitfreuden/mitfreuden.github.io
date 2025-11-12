@@ -1,8 +1,8 @@
 ---
-import '../styles/global.css'
+import "../styles/global.css";
 
-import Header from '../components/Header.astro';
-import type { Locale } from '../config/navigation';
+import Header from "../components/Header.astro";
+import type { Locale } from "../config/navigation";
 
 interface Props {
   title: string;
@@ -13,8 +13,8 @@ interface Props {
 const { title, description, locale } = Astro.props;
 
 const canonicalURL = `https://mitfreuden.com${Astro.url.pathname}`;
-const currentPath = Astro.url.pathname.replace(/^\/(de|en)/, '') || '/';
-const siteName = 'Mit Freuden';
+const currentPath = Astro.url.pathname.replace(/^\/(de|en)/, "") || "/";
+const siteName = "Mit Freuden";
 ---
 
 <!doctype html>
@@ -30,8 +30,8 @@ const siteName = 'Mit Freuden';
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content={siteName} />
-    <meta property="og:locale" content={locale === 'de' ? 'de_DE' : 'en_US'} />
-    <meta property="og:locale:alternate" content={locale === 'de' ? 'en_US' : 'de_DE'} />
+    <meta property="og:locale" content={locale === "de" ? "de_DE" : "en_US"} />
+    <meta property="og:locale:alternate" content={locale === "de" ? "en_US" : "de_DE"} />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary" />
@@ -39,11 +39,12 @@ const siteName = 'Mit Freuden';
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet" />
 
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
   </head>
   <body class="bg-orange-50 text-gray-900">
