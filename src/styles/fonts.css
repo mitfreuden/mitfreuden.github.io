@@ -1,0 +1,17 @@
+@font-face {
+  font-family: "Playfair Display";
+  font-style: normal;
+  font-weight: 1 999;
+  font-display: swap;
+  src: url(/fonts/PlayfairDisplay/PlayfairDisplay-VariableFont.woff2)
+    format("woff2");
+}
+
+@font-face {
+  font-family: "Playfair Display";
+  font-style: italic;
+  font-weight: 1 999;
+  font-display: swap;
+  src: url(/fonts/PlayfairDisplay/PlayfairDisplay-Italic-VariableFont.woff2)
+    format("woff2");
+}
