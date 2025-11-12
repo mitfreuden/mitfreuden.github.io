@@ -2,73 +2,148 @@
 import Layout from "../../layouts/Layout.astro";
 
 const title = "Mit Freuden";
-const description = "What brings joy to life? That's right: it's really, really well-made software. We think so too.";
+const description =
+  "What brings joy to life? That's right: it's really, really well-made software. We think so too.";
 ---
 
 <Layout title={title} description={description} locale="en">
-  <article class="prose prose-lg max-w-none space-y-12 text-gray-700">
-    <div class="mb-24">
-      <h1 class="page-title text-4xl sm:text-5xl lg:text-6xl text-gray-900 mb-6">Mit Freuden</h1>
+  <article class="prose prose-lg max-w-none space-y-12 text-zinc-800">
+    <div class="mb-20 lg:mb-24">
+      <div class="flex gap-3 items-center mb-8">
+        <h1 class="text-5xl lg:text-6xl tracking-tight font-light text-zinc-900">
+          Mit Freuden
+        </h1>
+        <svg
+          class="h-16 lg:h-24"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 40 40"
+        >
+          <!-- Square Brackets [ ] - happy eyes ^^ -->
+          <g>
+            <path
+              d="M 10 4 L 4 4 L 4 36 L 10 36"
+              fill="none"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-linecap="round"></path>
+            <path
+              d="M 30 4 L 36 4 L 36 36 L 30 36"
+              fill="none"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-linecap="round"></path>
+            <path
+              d="M 10 24 Q 20 32 30 24"
+              fill="none"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-linecap="round"></path>
+            <path
+              d="M 12 18 Q 14 15 16 18"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              fill="none"></path>
+            <path
+              d="M 24 18 Q 26 15 28 18"
+              stroke="black"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              fill="none"></path>
+          </g>
+        </svg>
+      </div>
 
-      <p class="text-lg sm:text-xl">
-        What brings joy to life? That's right: it's really, <em>really</em> well-made software. We think so too.
+      <p class="text-xl/8 lg:text-2xl/10 font-serif">
+        What brings joy to life? That's right: it's
+        really, <span class="italic">really</span> well-made software.
+        <span class="italic block mt-2 lg:mt-3"> We think so too.</span>
       </p>
     </div>
 
-    <div>
-      <h2 class="text-xl font-bold mb-2">Complete solutions that deliver on their promises</h2>
+    <div class="mb-16 lg:mb-24">
+      <h2 class="text-3xl md:text-4xl tracking-tight leading-9 mb-3 md:mb-5">
+        Complete solutions that deliver on their promises
+      </h2>
 
-      <p>
-        We develop <b>complete, ready-to-use software</b> together with you – from the initial idea to smooth production
-        operation. Our solutions are web-based and run on all platforms. Including native mobile apps for iOS and Android
-        if needed. This way you reach your users everywhere, without compromising on performance or user experience.
+      <p class="font-serif max-w-2xl md:max-w-3xl text-lg/8 text-pretty">
+        We develop
+        <span class="font-bold">complete, ready-to-use software</span> together with you
+        – from the initial idea to smooth production operation. Our solutions are
+        web-based and run on all platforms. Including native mobile apps for iOS and
+        Android if needed. This way you reach your users everywhere, without
+        compromising on performance or user experience.
       </p>
     </div>
 
-    <div>
-      <h2 class="text-xl font-bold mb-2">Software that brings joy</h2>
+    <div class="mb-16 lg:mb-24">
+      <h2 class="text-3xl md:text-4xl tracking-tight leading-9 mb-3 md:mb-5">
+        Software that brings joy
+      </h2>
 
-      <p>
-        What good is the best technology if nobody enjoys working with it? Really, really good software must not only
-        function, it should also <b>bring joy</b>. That's why we focus on intuitive usability and design that not only
-        looks good, but enables simple and functional operation.
+      <p class="font-serif max-w-2xl md:max-w-3xl text-lg/8 text-pretty">
+        What good is the best technology if nobody enjoys working with it? Really,
+        really good software must not only function, it should
+        also <span class="font-bold">bring joy</span>. That's why we focus on intuitive
+        usability and design that not only looks good, but enables simple and functional
+        operation.
       </p>
     </div>
 
-    <div>
-      <h2 class="text-xl font-bold mb-2">Experience that moves industries</h2>
+    <div class="mb-16 lg:mb-24">
+      <h2 class="text-3xl md:text-4xl tracking-tight leading-9 mb-3 md:mb-5">
+        Experience that moves industries
+      </h2>
 
-      <p>
-        Our team has implemented projects in the most diverse sectors – from <b
-          >retail to energy to warehouse logistics</b
-        >. Every industry has its own challenges, and we know how to master them.
+      <p class="font-serif max-w-2xl md:max-w-3xl text-lg/8 text-pretty">
+        Our team has implemented projects in the most diverse sectors –
+        from <span class="font-bold">retail to energy to warehouse logistics</span>.
+        Every industry has its own challenges, and we know how to master them.
       </p>
     </div>
 
-    <div>
-      <h2 class="text-xl font-bold mb-2">Future-proof through proven technology</h2>
+    <div class="mb-16 lg:mb-24">
+      <h2 class="text-3xl md:text-4xl tracking-tight leading-9 mb-3 md:mb-5">
+        Future-proof through proven technology
+      </h2>
 
-      <p>
-        We rely on <b>proven, future-proof technologies</b> that grow with your business. Our focus is on B2B solutions such
-        as workflow automation, data visualization, or complex logistics systems that have been successfully deployed for
-        years. We deliver software not only quickly and securely, but also scalably – from startups to enterprise solutions.
+      <p class="font-serif max-w-2xl md:max-w-3xl text-lg/8 text-pretty">
+        We rely on <span class="font-bold">proven, future-proof</span> technologies that
+        grow with your business. Our focus is on B2B solutions such as workflow
+        automation, data visualization, or complex logistics systems that have been
+        successfully deployed for years. We deliver software not only quickly and
+        securely, but also scalably – from startups to enterprise solutions.
       </p>
     </div>
 
-    <div>
-      <h2 class="text-xl font-bold mb-2">We are reliable partners</h2>
+    <div class="mb-16 lg:mb-24">
+      <h2 class="text-3xl md:text-4xl tracking-tight leading-9 mb-3 md:mb-5">
+        We are reliable partners
+      </h2>
 
-      <p>
-        For us, software development is more than just writing code. We <b>live your projects</b> with you, understand your
-        goals, and develop solutions that truly fit you. No standard packages, no half measures. Custom-built software that
-        advances your business and brings you and your team joy day after day.
+      <p class="font-serif max-w-2xl md:max-w-3xl text-lg/8 text-pretty">
+        For us, software development is more than just writing code.
+        We <span class="font-bold">live your projects</span> with you, understand your
+        goals, and develop solutions that truly fit you. No standard packages, no half
+        measures. Custom-built software that advances your business and brings you and
+        your team joy day after day.
       </p>
     </div>
 
-    <div>
-      <h2 class="text-xl font-bold mb-2">Sounds good?</h2>
+    <div class="mt-30 mb-16 lg:mb-24">
+      <h2 class="text-4xl md:text-4xl tracking-tight font-normal leading-9 mb-5 md:mb-5">
+        Sounds good?
+      </h2>
 
-      <p>Then let's talk. We look forward to your project.</p>
+      <p class="font-serif max-w-2xl md:max-w-3xl text-2xl/10 text-pretty mb-2">
+        Then let's talk. We look forward to <span class="italic">your</span> project.
+      </p>
+      <p class="font-serif max-w-2xl md:max-w-3xl text-2xl/10 text-pretty">
+        <a
+          href="mailto:hello@mitfreuden.com"
+          class="underline underline-offset-3 transition-all hover:text-amber-800/60"
+          >Say hello</a>.
+      </p>
     </div>
   </article>
 </Layout>
