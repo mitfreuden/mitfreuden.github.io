@@ -11,12 +11,14 @@ interface Props {
 const { locale, currentPath } = Astro.props;
 ---
 
-<header class="sticky top-0 bg-orange-50">
+<header class="sticky top-0 transition-colors duration-400">
   <div
     class="header-content container mx-auto max-w-4xl px-4 py-2 sm:px-6 lg:px-8"
   >
     <div class="flex justify-between items-center">
-      <div class="flex gap-x-1.5 items-center transition-all">
+      <div
+        class="logo-container flex gap-x-1.5 items-center transition-all duration-500 opacity-0"
+      >
         <div class="tracking-tight font-semibold text-zinc-900">
           Mit Freuden
         </div>
@@ -64,3 +66,39 @@ const { locale, currentPath } = Astro.props;
     </div>
   </div>
 </header>
+
+<script>
+  // Fade in logo on scroll
+  let ticking = false;
+
+  function handleScroll() {
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        const header = document.querySelector("header");
+        const logoContainer = document.querySelector(".logo-container");
+        const scrollPosition = window.scrollY;
+        const threshold = 70;
+        if (logoContainer) {
+          if (scrollPosition > threshold) {
+            logoContainer.classList.remove("opacity-0", "delay-0");
+            logoContainer.classList.add("opacity-100", "delay-300");
+          } else {
+            logoContainer.classList.remove("opacity-100", "delay-300");
+            logoContainer.classList.add("opacity-0", "delay-0");
+          }
+        }
+        if (header) {
+          if (scrollPosition > threshold) {
+            header.classList.add("bg-orange-50");
+          } else {
+            header.classList.remove("bg-orange-50");
+          }
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  }
+
+  window.addEventListener("scroll", handleScroll);
+</script>
