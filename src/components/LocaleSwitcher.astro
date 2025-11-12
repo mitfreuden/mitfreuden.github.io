@@ -1,6 +1,6 @@
 ---
-import { getRelativeLocaleUrl } from 'astro:i18n';
-import type { Locale } from '../config/navigation';
+import { getRelativeLocaleUrl } from "astro:i18n";
+import type { Locale } from "../config/navigation";
 
 interface Props {
   locale: Locale;
@@ -11,6 +11,10 @@ const { locale, currentPath } = Astro.props;
 ---
 
 <nav class="flex justify-end gap-2">
-  <a href={getRelativeLocaleUrl("de", currentPath)} class="hover:underline"}>de</a>
-  <a href={getRelativeLocaleUrl("en", currentPath)} class="hover:underline"}>en</a>
+  <a href={getRelativeLocaleUrl("de", currentPath)} class="hover:underline" }
+    >de</a
+  >
+  <a href={getRelativeLocaleUrl("en", currentPath)} class="hover:underline" }
+    >en</a
+  >
 </nav>

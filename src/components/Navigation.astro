@@ -1,5 +1,5 @@
 ---
-import { navigationConfig, type Locale } from '../config/navigation';
+import { navigationConfig, type Locale } from "../config/navigation";
 
 interface Props {
   locale: Locale;
@@ -7,40 +7,55 @@ interface Props {
 
 const { locale } = Astro.props;
 
-const navLinks = navigationConfig[locale].map(item => ({
+const navLinks = navigationConfig[locale].map((item) => ({
   label: item.label,
-  href: `#${item.anchor}`
+  href: `#${item.anchor}`,
 }));
 ---
 
 <nav class="nav-container">
   <!-- Hamburger button (mobile only) -->
-  <button 
-    class="hamburger md:hidden flex flex-col gap-1.5 w-8 h-8 justify-center items-center"
+  <button
+    class="hamburger flex h-8 w-8 flex-col items-center justify-center gap-1.5 md:hidden"
     aria-label="Toggle menu"
     aria-expanded="false"
   >
-    <span class="hamburger-line w-6 h-0.5 bg-gray-900 transition-all duration-300"></span>
-    <span class="hamburger-line w-6 h-0.5 bg-gray-900 transition-all duration-300"></span>
-    <span class="hamburger-line w-6 h-0.5 bg-gray-900 transition-all duration-300"></span>
+    <span
+      class="hamburger-line h-0.5 w-6 bg-gray-900 transition-all duration-300"
+    ></span>
+    <span
+      class="hamburger-line h-0.5 w-6 bg-gray-900 transition-all duration-300"
+    ></span>
+    <span
+      class="hamburger-line h-0.5 w-6 bg-gray-900 transition-all duration-300"
+    ></span>
   </button>
 
   <!-- Navigation links -->
-  <div class="nav-links hidden md:flex gap-2">
-    {navLinks.map(link => (
-      <a href={link.href} class="hover:underline transition-colors">
-        {link.label}
-      </a>
-    ))}
+  <div class="nav-links hidden gap-2 md:flex">
+    {
+      navLinks.map((link) => (
+        <a href={link.href} class="transition-colors hover:underline">
+          {link.label}
+        </a>
+      ))
+    }
   </div>
 
   <!-- Mobile menu -->
-  <div class="mobile-menu fixed inset-0 bg-orange-50 z-40 hidden flex-col items-center justify-center gap-8 text-2xl">
-    {navLinks.map(link => (
-      <a href={link.href} class="hover:underline transition-colors mobile-menu-link">
-        {link.label}
-      </a>
-    ))}
+  <div
+    class="mobile-menu fixed inset-0 z-40 hidden flex-col items-center justify-center gap-8 bg-orange-50 text-2xl"
+  >
+    {
+      navLinks.map((link) => (
+        <a
+          href={link.href}
+          class="mobile-menu-link transition-colors hover:underline"
+        >
+          {link.label}
+        </a>
+      ))
+    }
   </div>
 </nav>
 
@@ -55,11 +70,11 @@ const navLinks = navigationConfig[locale].map(item => ({
   .hamburger.is-open .hamburger-line:nth-child(1) {
     transform: translateY(8px) rotate(45deg);
   }
-  
+
   .hamburger.is-open .hamburger-line:nth-child(2) {
     opacity: 0;
   }
-  
+
   .hamburger.is-open .hamburger-line:nth-child(3) {
     transform: translateY(-8px) rotate(-45deg);
   }
@@ -71,27 +86,27 @@ const navLinks = navigationConfig[locale].map(item => ({
 </style>
 
 <script>
-  const hamburger = document.querySelector('.hamburger');
-  const mobileMenu = document.querySelector('.mobile-menu');
-  const mobileMenuLinks = document.querySelectorAll('.mobile-menu-link');
-  
+  const hamburger = document.querySelector(".hamburger");
+  const mobileMenu = document.querySelector(".mobile-menu");
+  const mobileMenuLinks = document.querySelectorAll(".mobile-menu-link");
+
   if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => {
-      const isOpen = hamburger.classList.toggle('is-open');
-      mobileMenu.classList.toggle('is-open');
-      hamburger.setAttribute('aria-expanded', isOpen.toString());
-      
+    hamburger.addEventListener("click", () => {
+      const isOpen = hamburger.classList.toggle("is-open");
+      mobileMenu.classList.toggle("is-open");
+      hamburger.setAttribute("aria-expanded", isOpen.toString());
+
       // Prevent body scroll when menu is open
-      document.body.style.overflow = isOpen ? 'hidden' : '';
+      document.body.style.overflow = isOpen ? "hidden" : "";
     });
-    
+
     // Close menu when a link is clicked
-    mobileMenuLinks.forEach(link => {
-      link.addEventListener('click', () => {
-        hamburger.classList.remove('is-open');
-        mobileMenu.classList.remove('is-open');
-        hamburger.setAttribute('aria-expanded', 'false');
-        document.body.style.overflow = '';
+    mobileMenuLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        hamburger.classList.remove("is-open");
+        mobileMenu.classList.remove("is-open");
+        hamburger.setAttribute("aria-expanded", "false");
+        document.body.style.overflow = "";
       });
     });
   }

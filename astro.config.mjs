@@ -1,27 +1,27 @@
 // @ts-check
-import { defineConfig } from 'astro/config';
+import { defineConfig } from "astro/config";
 
-import tailwindcss from '@tailwindcss/vite';
+import tailwindcss from "@tailwindcss/vite";
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://mitfreuden.com',
+  site: "https://mitfreuden.com",
 
   i18n: {
-    locales: ['de', 'en'],
-    defaultLocale: 'en',
+    locales: ["de", "en"],
+    defaultLocale: "en",
     routing: {
       prefixDefaultLocale: true,
-      redirectToDefaultLocale: false
-    }
+      redirectToDefaultLocale: false,
+    },
   },
 
   server: {
     host: true,
-    allowedHosts: true
+    allowedHosts: true,
   },
 
   vite: {
-    plugins: [tailwindcss()]
-  }
+    plugins: [tailwindcss()],
+  },
 });

@@ -1,7 +1,7 @@
 ---
-import Navigation from './Navigation.astro';
-import LocaleSwitcher from './LocaleSwitcher.astro';
-import type { Locale } from '../config/navigation';
+import Navigation from "./Navigation.astro";
+import LocaleSwitcher from "./LocaleSwitcher.astro";
+import type { Locale } from "../config/navigation";
 
 interface Props {
   locale: Locale;
@@ -12,13 +12,15 @@ const { locale, currentPath } = Astro.props;
 ---
 
 <header class="sticky top-0 bg-orange-50">
-  <div class="header-content container mx-auto px-4 sm:px-6 lg:px-8 py-4 max-w-4xl">
-    <div class="flex justify-between items-center">
+  <div
+    class="header-content container mx-auto max-w-4xl px-4 py-4 sm:px-6 lg:px-8"
+  >
+    <div class="flex items-center justify-between">
       Mit Freuden
       <div class="flex items-center gap-8">
         <LocaleSwitcher locale={locale} currentPath={currentPath} />
         <!--<Navigation locale={locale} />-->
       </div>
-    </div>    
+    </div>
   </div>
 </header>

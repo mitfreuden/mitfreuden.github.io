@@ -31,7 +31,10 @@ const siteName = "Mit Freuden";
     <meta property="og:description" content={description} />
     <meta property="og:site_name" content={siteName} />
     <meta property="og:locale" content={locale === "de" ? "de_DE" : "en_US"} />
-    <meta property="og:locale:alternate" content={locale === "de" ? "en_US" : "de_DE"} />
+    <meta
+      property="og:locale:alternate"
+      content={locale === "de" ? "en_US" : "de_DE"}
+    />
 
     <!-- Twitter -->
     <meta name="twitter:card" content="summary" />
@@ -45,24 +48,38 @@ const siteName = "Mit Freuden";
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
-    
+
     <!-- Privacy-friendly analytics by Plausible -->
-    <script async src="https://plausible.io/js/pa-ddn7DIy6SQOfO-S93YWTB.js"></script>
+    <script async src="https://plausible.io/js/pa-ddn7DIy6SQOfO-S93YWTB.js"
+    ></script>
     <script>
-      window.plausible=window.plausible||function(){(plausible.q=plausible.q||[]).push(arguments)},plausible.init=plausible.init||function(i){plausible.o=i||{}};
-      plausible.init()
+      ((window.plausible =
+        window.plausible ||
+        function () {
+          (plausible.q = plausible.q || []).push(arguments);
+        }),
+        (plausible.init =
+          plausible.init ||
+          function (i) {
+            plausible.o = i || {};
+          }));
+      plausible.init();
     </script>
   </head>
   <body class="bg-orange-50 text-gray-900">
-    <div class="min-h-screen flex flex-col">
+    <div class="flex min-h-screen flex-col">
       <Header locale={locale} currentPath={currentPath} />
 
-      <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16 max-w-4xl">
+      <main
+        class="container mx-auto max-w-4xl flex-grow px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-16"
+      >
         <slot />
       </main>
 
-      <footer class="bg-white border-t border-gray-200 py-6">
-        <div class="container mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl text-center text-gray-600 text-sm">
+      <footer class="border-t border-gray-200 bg-white py-6">
+        <div
+          class="container mx-auto max-w-4xl px-4 text-center text-sm text-gray-600 sm:px-6 lg:px-8"
+        >
           <p>&copy; 2025 Mit Freuden.</p>
         </div>
       </footer>
