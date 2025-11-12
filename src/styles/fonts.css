@@ -15,3 +15,19 @@
   src: url(/fonts/PlayfairDisplay/PlayfairDisplay-Italic-VariableFont.woff2)
     format("woff2");
 }
+
+@font-face {
+  font-family: "Nunito";
+  font-style: normal;
+  font-weight: 1 999;
+  font-display: swap;
+  src: url(/fonts/Nunito/Nunito-VariableFont.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Nunito";
+  font-style: italic;
+  font-weight: 1 999;
+  font-display: swap;
+  src: url(/fonts/Nunito/Nunito-Italic-VariableFont.woff2) format("woff2");
+}
