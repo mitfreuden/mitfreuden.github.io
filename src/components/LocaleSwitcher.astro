@@ -1,20 +1,68 @@
 ---
 import { getRelativeLocaleUrl } from "astro:i18n";
-import type { Locale } from "../config/navigation";
 
-interface Props {
-  locale: Locale;
-  currentPath: string;
-}
-
-const { locale, currentPath } = Astro.props;
+const currentPath = Astro.url.pathname.replace(/^\/(de|en)/, "") || "/";
 ---
 
-<nav class="flex justify-end gap-2">
-  <a href={getRelativeLocaleUrl("de", currentPath)} class="hover:underline" }
-    >de</a
+<div class="relative z-0">
+  <button
+    popovertarget="menu-language"
+    class="group inline-flex items-center text-sm/6 font-semibold text-gray-600 transition-all hover:cursor-pointer hover:text-rose-600 active:scale-95 aria-expanded:text-rose-600"
   >
-  <a href={getRelativeLocaleUrl("en", currentPath)} class="hover:underline" }
-    >en</a
+    <svg fill="none" viewBox="0 0 24 24" class="h-5">
+      <circle
+        cx="12"
+        cy="12"
+        r="7.25"
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.5"></circle>
+      <path
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.5"
+        d="M15.25 12C15.25 16.5 13.2426 19.25 12 19.25C10.7574 19.25 8.75 16.5 8.75 12C8.75 7.5 10.7574 4.75 12 4.75C13.2426 4.75 15.25 7.5 15.25 12Z"
+      ></path>
+      <path
+        stroke="currentColor"
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="1.5"
+        d="M5 12H12H19"></path>
+    </svg>
+    <svg
+      viewBox="0 0 20 20"
+      fill="currentColor"
+      data-slot="icon"
+      aria-hidden="true"
+      class="size-4 rotate-180 transition-all group-aria-expanded:rotate-0"
+    >
+      <path
+        d="M5.22 8.22a.75.75 0 0 1 1.06 0L10 11.94l3.72-3.72a.75.75 0 1 1 1.06 1.06l-4.25 4.25a.75.75 0 0 1-1.06 0L5.22 9.28a.75.75 0 0 1 0-1.06Z"
+        clip-rule="evenodd"
+        fill-rule="evenodd"></path>
+    </svg>
+  </button>
+
+  <el-popover
+    id="menu-language"
+    anchor="bottom"
+    popover="auto"
+    class="w-screen max-w-min overflow-visible bg-transparent px-2 transition transition-discrete [--anchor-gap:--spacing(5)] backdrop:bg-transparent open:flex data-closed:translate-y-1 data-closed:opacity-0 data-enter:duration-200 data-enter:ease-out data-leave:duration-150 data-leave:ease-in"
   >
-</nav>
+    <div
+      class="w-40 shrink rounded-xl bg-white p-2 text-sm/6 font-semibold text-gray-900 shadow-lg outline-1 outline-gray-900/5"
+    >
+      <a
+        href={getRelativeLocaleUrl("de", currentPath)}
+        class="block p-2 transition-all hover:text-rose-600">Deutsch</a
+      >
+      <a
+        href={getRelativeLocaleUrl("en", currentPath)}
+        class="block p-2 transition-all hover:text-rose-600">English</a
+      >
+    </div>
+  </el-popover>
+</div>

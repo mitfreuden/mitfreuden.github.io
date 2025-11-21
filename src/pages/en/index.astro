@@ -1,54 +1,70 @@
 ---
+import { Image } from "astro:assets";
+
 import Layout from "../../layouts/Layout.astro";
 
-const title = "Mit Freuden";
-const description =
-  "What brings joy to life? That's right: it's really, really well-made software. We think so too.";
+import appScreenshot from "../../images/app-screenshot.png";
+import rubyLogo from "../../images/ruby-logo.svg";
+import railsLogo from "../../images/rails-logo.svg";
+import postgresLogo from "../../images/postgresql-logo.svg";
+import christoph from "../../images/christoph.png";
+import fritz from "../../images/fritz.jpg";
+import wolfgang from "../../images/wolfgang.jpg";
+import clemens from "../../images/clemens.jpg";
 ---
 
-<Layout title={title} description={description} locale="en">
-  <article class="prose prose-lg max-w-none space-y-12 text-zinc-800">
-    <div class="mb-20 lg:mb-24">
-      <div class="mb-8 flex items-center gap-3">
+<Layout>
+  <div>
+    <div class="-mt-8 mb-50 sm:mb-60">
+      <div
+        class="site-logo mb-16 flex items-center justify-start gap-1 sm:mb-30 sm:justify-start md:gap-3"
+      >
         <h1
-          class="text-5xl font-light tracking-tight text-zinc-900 lg:text-6xl"
+          class="inline-block bg-linear-to-tr from-rose-600 via-rose-400 to-orange-300 bg-clip-text text-5xl font-light tracking-tight text-transparent md:text-6xl"
         >
           Mit Freuden
         </h1>
         <svg
-          class="h-16 lg:h-24"
+          class="h-18 md:h-24"
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 40 40"
+          stroke="url(#grad1)"
         >
           <!-- Square Brackets [ ] - happy eyes ^^ -->
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="50%" x2="20%" y2="0%">
+              <stop
+                offset="0%"
+                style="stop-color:var(--color-rose-400);stop-opacity:1"></stop>
+              <stop
+                offset="100%"
+                style="stop-color:var(--color-orange-400);stop-opacity:1"
+              ></stop>
+            </linearGradient>
+          </defs>
           <g>
             <path
               d="M 10 4 L 4 4 L 4 36 L 10 36"
               fill="none"
-              stroke="black"
               stroke-width="1.5"
               stroke-linecap="round"></path>
             <path
               d="M 30 4 L 36 4 L 36 36 L 30 36"
               fill="none"
-              stroke="black"
               stroke-width="1.5"
               stroke-linecap="round"></path>
             <path
               d="M 10 24 Q 20 32 30 24"
               fill="none"
-              stroke="black"
               stroke-width="1.5"
               stroke-linecap="round"></path>
             <path
               d="M 12 18 Q 14 15 16 18"
-              stroke="black"
               stroke-width="1.5"
               stroke-linecap="round"
               fill="none"></path>
             <path
               d="M 24 18 Q 26 15 28 18"
-              stroke="black"
               stroke-width="1.5"
               stroke-linecap="round"
               fill="none"></path>
@@ -56,101 +72,337 @@ const description =
         </svg>
       </div>
 
-      <p class="font-serif text-xl/8 lg:text-2xl/10">
-        What brings joy to life? That's right: it's really, <span class="italic"
-          >really</span
-        > well-made software.
-        <span class="mt-2 block italic lg:mt-3"> We think so too.</span>
-      </p>
-    </div>
-
-    <div class="mb-16 lg:mb-24">
-      <h2 class="mb-3 text-3xl leading-9 tracking-tight md:mb-5 md:text-4xl">
-        Complete solutions that deliver on their promises
-      </h2>
-
-      <p class="max-w-2xl font-serif text-lg/8 text-pretty md:max-w-3xl">
-        We develop
-        <span class="font-bold">complete, ready-to-use software</span> together with
-        you – from the initial idea to smooth production operation. Our solutions
-        are web-based and run on all platforms. Including native mobile apps for
-        iOS and Android if needed. This way you reach your users everywhere, without
-        compromising on performance or user experience.
-      </p>
-    </div>
-
-    <div class="mb-16 lg:mb-24">
-      <h2 class="mb-3 text-3xl leading-9 tracking-tight md:mb-5 md:text-4xl">
-        Software that brings joy
-      </h2>
-
-      <p class="max-w-2xl font-serif text-lg/8 text-pretty md:max-w-3xl">
-        What good is the best technology if nobody enjoys working with it?
-        Really, really good software must not only function, it should also <span
-          class="font-bold">bring joy</span
-        >. That's why we focus on intuitive usability and design that not only
-        looks good, but enables simple and functional operation.
-      </p>
-    </div>
-
-    <div class="mb-16 lg:mb-24">
-      <h2 class="mb-3 text-3xl leading-9 tracking-tight md:mb-5 md:text-4xl">
-        Experience that moves industries
-      </h2>
-
-      <p class="max-w-2xl font-serif text-lg/8 text-pretty md:max-w-3xl">
-        Our team has implemented projects in the most diverse sectors – from <span
-          class="font-bold">retail to energy to warehouse logistics</span
-        >. Every industry has its own challenges, and we know how to master
-        them.
-      </p>
-    </div>
-
-    <div class="mb-16 lg:mb-24">
-      <h2 class="mb-3 text-3xl leading-9 tracking-tight md:mb-5 md:text-4xl">
-        Future-proof through proven technology
-      </h2>
-
-      <p class="max-w-2xl font-serif text-lg/8 text-pretty md:max-w-3xl">
-        We rely on <span class="font-bold">proven, future-proof</span> technologies
-        that grow with your business. Our focus is on B2B solutions such as workflow
-        automation, data visualization, or complex logistics systems that have been
-        successfully deployed for years. We deliver software not only quickly and
-        securely, but also scalably – from startups to enterprise solutions.
-      </p>
-    </div>
-
-    <div class="mb-16 lg:mb-24">
-      <h2 class="mb-3 text-3xl leading-9 tracking-tight md:mb-5 md:text-4xl">
-        We are reliable partners
-      </h2>
-
-      <p class="max-w-2xl font-serif text-lg/8 text-pretty md:max-w-3xl">
-        For us, software development is more than just writing code. We <span
-          class="font-bold">live your projects</span
-        > with you, understand your goals, and develop solutions that truly fit you.
-        No standard packages, no half measures. Custom-built software that advances
-        your business and brings you and your team joy day after day.
-      </p>
-    </div>
-
-    <div class="mt-30 mb-16 lg:mb-24">
-      <h2
-        class="mb-5 text-4xl leading-9 font-normal tracking-tight md:mb-5 md:text-4xl"
+      <div
+        class="font-serif text-4xl/tight tracking-tight text-neutral-600 sm:text-right sm:text-5xl/tight"
       >
-        Sounds good?
+        <p>What brings joy to&nbsp;life?</p>
+        <p>
+          Easy: really,<span
+            class="bg-linear-to-tr from-rose-600 via-rose-400 to-orange-300 bg-clip-text text-transparent"
+          >
+            <span class="italic">really</span> well-made software.</span
+          >
+        </p>
+        <p class="mt-10 italic">We think so too.</p>
+      </div>
+    </div>
+
+    <div class="mx-auto mb-10 lg:mb-20">
+      <div
+        class="-mx-4 overflow-hidden bg-linear-to-b from-orange-100/60 to-transparent px-6 py-12 sm:-mx-6 sm:px-10 sm:py-16 md:-mx-6 lg:-mx-8 lg:rounded-3xl lg:bg-linear-to-br lg:to-orange-100/80"
+      >
+        <div
+          class="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2 lg:items-center lg:gap-y-0"
+        >
+          <div class="lg:row-start-2 lg:max-w-md">
+            <h2
+              class="mb-3 bg-linear-to-tr from-rose-600 via-rose-400 to-orange-300 bg-clip-text font-serif text-4xl/tight tracking-tight text-transparent md:mb-5 md:text-5xl/tight"
+            >
+              Software that delights
+            </h2>
+            <p class="mb-3 font-sans text-lg/8 text-pretty text-neutral-600/90">
+              What's the point of great technology if no one enjoys using it?
+              Really good software doesn't just work—it should be a pleasure to
+              use.
+            </p>
+            <p
+              class="mb-18 font-sans text-lg/8 text-pretty text-neutral-600/90"
+            >
+              That's why we care about intuitive usability and design that's not
+              just good-looking, but genuinely functional.
+            </p>
+            <a
+              href="#demo"
+              class="group text-lg font-semibold text-rose-400 transition-all duration-200 hover:text-rose-600"
+              ><span class="">Try it yourself</span>
+              <span aria-hidden="true">→</span></a
+            >
+          </div>
+          <Image
+            src={appScreenshot}
+            alt="Screenshot of a web app that delights"
+            width="2048"
+            class="max-w-xl min-w-full rounded-xl shadow-xl ring-1 shadow-orange-800/10 ring-white/10 lg:row-span-4 lg:w-5xl lg:max-w-none"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="mx-auto mb-32 max-w-2xl pt-24 lg:mx-0 lg:mb-48 lg:max-w-none"
+      id="solutions"
+    >
+      <h2
+        class="mb-3 font-serif text-4xl tracking-tight text-neutral-600 md:mb-5 md:text-5xl"
+      >
+        Complete solutions
       </h2>
 
-      <p class="mb-2 max-w-2xl font-serif text-2xl/10 text-pretty md:max-w-3xl">
-        Then let's talk. We look forward to <span class="italic">your</span> project.
+      <p class="max-w-2xl font-sans text-lg/8 text-pretty text-neutral-600">
+        We build <span
+          class="bg-linear-to-tr from-rose-600 via-rose-400 to-orange-300 bg-clip-text font-bold text-transparent"
+          >production-ready software</span
+        > with you—from first idea to smooth launch.
       </p>
-      <p class="max-w-2xl font-serif text-2xl/10 text-pretty md:max-w-3xl">
-        <a
-          href="mailto:hello@mitfreuden.com"
-          class="underline underline-offset-3 transition-all hover:text-amber-800/60"
-          >Say hello</a
-        >.
-      </p>
+
+      <dl
+        class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base/7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+      >
+        <div>
+          <dt class="font-semibold text-neutral-800">Web-based</dt>
+          <dd class="mt-1 text-neutral-600">
+            Our solutions are web-based and run on any platform. Desktop at the
+            office, tablet on the go, or phone in the field.
+          </dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-neutral-800">Native mobile apps</dt>
+          <dd class="mt-1 text-neutral-600">
+            Reach your users anywhere, without compromising on performance or
+            usability.
+          </dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-gray-800">Integrated</dt>
+          <dd class="mt-1 text-neutral-600">
+            We're experts at integrating with existing systems and third-party
+            services. Good software plays well with others.
+          </dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-neutral-800">Easy to use</dt>
+          <dd class="mt-1 text-neutral-600">
+            Intuitive software that works well and looks good. So you can hit
+            the ground running.
+          </dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-neutral-800">Adaptable</dt>
+          <dd class="mt-1 text-neutral-600">
+            Unexpected changes? Our software evolves with your business.
+            Whatever comes your way.
+          </dd>
+        </div>
+        <div>
+          <dt class="font-semibold text-neutral-800">Scalable</dt>
+          <dd class="mt-1 text-neutral-600">
+            Your business is growing? Great—the software grows with it, without
+            over-engineering or runaway cloud costs.
+          </dd>
+        </div>
+      </dl>
     </div>
-  </article>
+
+    <div class="mx-auto mb-32 max-w-2xl lg:mb-48 lg:max-w-none">
+      <h3
+        class="mb-3 font-serif text-3xl tracking-normal text-neutral-600 md:mb-5 md:text-4xl"
+      >
+        Future-proof through proven technology
+      </h3>
+
+      <p class="max-w-2xl font-sans text-lg/8 text-pretty">
+        We rely on <span
+          class="bg-linear-to-tr from-rose-600 via-rose-400 to-orange-300 bg-clip-text font-bold text-transparent"
+          >battle-tested, future-proof technologies</span
+        > that scale with your business. Our focus is B2B solutions—workflow automation,
+        data visualization, complex logistics systems—software that stays in production
+        for years. We deliver fast, secure, and scalable solutions, from startups
+        to enterprise.
+      </p>
+
+      <div class="mx-auto mt-16">
+        <div
+          class="-mx-4 grid grid-cols-2 gap-0.5 overflow-hidden sm:-mx-6 md:-mx-6 md:grid-cols-3 lg:-mx-8 lg:rounded-3xl"
+        >
+          <div class="bg-orange-100/50 p-8 sm:p-10">
+            <Image
+              width="158"
+              height="48"
+              src={rubyLogo}
+              alt="Ruby"
+              class="max-h-12 w-full object-contain"
+            />
+          </div>
+          <div class="bg-orange-100/50 p-6 sm:p-10">
+            <Image
+              width="158"
+              height="48"
+              src={railsLogo}
+              alt="Ruby on Rails"
+              class="max-h-12 w-full object-contain"
+            />
+          </div>
+          <div class="bg-orange-100/50 p-6 sm:p-10">
+            <Image
+              width="158"
+              height="48"
+              src={postgresLogo}
+              alt="PostgreSQL"
+              class="max-h-12 w-full object-contain"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="mx-auto mb-16 max-w-2xl pt-24 lg:mx-0 lg:mb-30 lg:max-w-none"
+      id="team"
+    >
+      <h2
+        class="mb-3 font-serif text-4xl tracking-tight text-neutral-600 md:mb-5 md:text-5xl"
+      >
+        Together
+      </h2>
+
+      <p
+        class="mb-3 max-w-2xl font-sans text-lg/8 text-pretty text-neutral-600"
+      >
+        For us, software development is more than writing code.
+        <br />
+        We <span
+          class="bg-linear-to-tr from-rose-600 via-rose-400 to-orange-300 bg-clip-text font-bold text-transparent"
+          >live your projects</span
+        > with you, understand your goals, and build solutions that truly fit. No
+        cookie-cutter packages, no half measures.
+      </p>
+      <p class="max-w-2xl font-sans text-lg/8 text-pretty text-neutral-600">
+        Our team has delivered projects across industries—<span
+          class="bg-linear-to-tr from-rose-600 via-rose-400 to-orange-300 bg-clip-text font-bold text-transparent"
+          >from retail to energy to warehouse logistics</span
+        >. Every industry has its challenges, and we know how to tackle them.
+        The result: custom software that moves your business forward and brings
+        joy to you and your team, every single day.
+      </p>
+
+      <ul
+        role="list"
+        class="mt-20 grid grid-cols-1 gap-y-20 md:grid-cols-2 md:gap-x-18 lg:mx-0 lg:max-w-none"
+      >
+        <li>
+          <Image
+            loading="lazy"
+            src={clemens}
+            alt=""
+            class="aspect-square w-32 rounded-full object-cover outline-1 -outline-offset-1 outline-black/5"
+            width="128"
+          />
+          <h3 class="mt-6 text-lg/8 font-semibold text-gray-900 sm:text-xl/8">
+            Clemens Helm
+          </h3>
+          <!-- <p class="text-base/7 text-gray-600">TBD</p> -->
+          <p class="mt-4 text-lg/8 text-pretty text-gray-600 lg:text-base/7">
+            Clemens brings CTO and VP Engineering experience to helping teams
+            rescue their Rails applications. With 20+ years in full-stack
+            development, he focuses on performance optimization, security
+            hardening, and long-term maintainability, turning legacy codebases
+            into clean, reliable foundations that teams enjoy working with
+            again.
+          </p>
+        </li>
+        <li>
+          <Image
+            loading="lazy"
+            src={christoph}
+            alt=""
+            class="aspect-square w-32 rounded-full object-cover outline-1 -outline-offset-1 outline-black/5"
+            width="128"
+          />
+          <h3
+            class="mt-6 text-lg/8 font-semibold text-neutral-900 sm:text-xl/8"
+          >
+            Christoph Lupprich
+          </h3>
+          <!-- <p class="text-base/7 text-neutral-600">TBD</p> -->
+          <p class="mt-4 text-lg/8 text-pretty text-neutral-600 lg:text-base/7">
+            With 15+ years building full-stack web applications, Christoph
+            specializes in Ruby, Ruby on Rails, and PostgreSQL. From maritime
+            safety systems to geospatial data processing, he's passionate about
+            solving real business problems and bringing products to life from
+            day one.
+          </p>
+        </li>
+        <li>
+          <Image
+            loading="lazy"
+            src={fritz}
+            alt=""
+            class="aspect-square w-32 rounded-full object-cover outline-1 -outline-offset-1 outline-black/5"
+            width="128"
+          />
+          <h3
+            class="mt-6 text-lg/8 font-semibold text-neutral-900 sm:text-xl/8"
+          >
+            Fritz Grabo
+          </h3>
+          <!-- <p class="text-base/7 text-neutral-600">TBD</p> -->
+          <p class="mt-4 text-lg/8 text-pretty text-neutral-600 lg:text-base/7">
+            Fritz brings 20+ years of experience in backend architecture and
+            scaling web applications. He's mission-driven, focusing on
+            meaningful problems while maintaining the balance between rapid
+            development and robust infrastructure—from root servers to modern
+            cloud solutions.
+          </p>
+        </li>
+        <li>
+          <Image
+            loading="lazy"
+            src={wolfgang}
+            alt=""
+            class="aspect-square w-32 rounded-full object-cover outline-1 -outline-offset-1 outline-black/5"
+            width="128"
+          />
+          <h3
+            class="mt-6 text-lg/8 font-semibold text-neutral-900 sm:text-xl/8"
+          >
+            Wolfgang Rittner
+          </h3>
+          <!-- <p class="text-base/7 text-neutral-600">TBD</p> -->
+          <p class="mt-4 text-lg/8 text-pretty text-neutral-600 lg:text-base/7">
+            A hands-on software architect with 20+ years under his belt,
+            Wolfgang excels at cutting through complexity and delivering
+            practical solutions. He jumps in to understand system interactions
+            and provide actionable insights that unblock and accelerate
+            projects.
+          </p>
+        </li>
+      </ul>
+    </div>
+
+    <div class="mx-auto -mb-16 lg:mb-10">
+      <div
+        class="-mx-4 overflow-hidden bg-orange-100/50 px-6 pt-12 pb-24 sm:-mx-6 sm:px-10 sm:pt-16 sm:pb-32 md:-mx-6 lg:-mx-8 lg:rounded-3xl lg:pb-24"
+      >
+        <div
+          class="mx-auto max-w-2xl lg:flex lg:max-w-7xl lg:items-center lg:justify-between"
+        >
+          <div>
+            <h2
+              class="bg-linear-to-tr from-rose-600 via-rose-400 to-orange-300 bg-clip-text font-serif text-4xl/tight tracking-tight text-transparent md:text-5xl/tight"
+            >
+              Sounds good?
+            </h2>
+            <p
+              class="mb-6 max-w-2xl font-serif text-4xl/12 text-pretty text-neutral-600 md:max-w-3xl"
+            >
+              Then let's talk.
+            </p>
+            <p
+              class="max-w-2xl font-serif text-4xl/12 text-pretty text-neutral-600 italic md:max-w-3xl"
+            >
+              We can't&nbsp;wait.
+            </p>
+          </div>
+          <div class="mt-10 flex items-center gap-x-6 lg:mt-0 lg:shrink-0">
+            <a
+              href="mailto:hello@mitfreuden.com"
+              class="rounded-md bg-rose-500 px-3.5 py-2.5 text-lg font-semibold text-rose-50 shadow-xs hover:bg-rose-600 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              Say hello
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </Layout>

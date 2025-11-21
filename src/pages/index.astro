@@ -1,36 +1,9 @@
 ---
-const title = "Mit Freuden";
-const description =
-  "What brings joy to life? That's right: it's really, really well-made software. We think so too.";
-
-const canonicalURL = `https://mitfreuden.com`;
-const siteName = "Mit Freuden";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<html lang="en">
-  <head>
-    <title>{title}</title>
-    <link rel="canonical" href={canonicalURL} />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-
-    <meta charset="UTF-8" />
-    <meta name="description" content={description} />
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content={canonicalURL} />
-    <meta property="og:title" content={title} />
-    <meta property="og:description" content={description} />
-    <meta property="og:site_name" content={siteName} />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:locale:alternate" content="de_DE" />
-
-    <!-- Twitter -->
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:url" content={canonicalURL} />
-    <meta name="twitter:title" content={title} />
-    <meta name="twitter:description" content={description} />
-
+<Layout>
+  <Fragment slot="head">
     <script>
       window.location.replace(
         navigator.language.startsWith("de") ? "/de" : "/en",
@@ -40,6 +13,5 @@ const siteName = "Mit Freuden";
     <noscript>
       <meta http-equiv="refresh" content="0; url=/en" />
     </noscript>
-  </head>
-  <body> </body>
-</html>
+  </Fragment>
+</Layout>

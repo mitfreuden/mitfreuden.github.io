@@ -1,41 +1,48 @@
 ---
-import { navigationConfig, type Locale } from "../config/navigation";
+import { getRelativeLocaleUrl } from "astro:i18n";
+const homeUrl = getRelativeLocaleUrl(Astro.currentLocale, "/");
 
-interface Props {
-  locale: Locale;
-}
-
-const { locale } = Astro.props;
-
-const navLinks = navigationConfig[locale].map((item) => ({
-  label: item.label,
-  href: `#${item.anchor}`,
-}));
+const navLinksMap = {
+  en: [
+    { label: "Solutions", href: `#solutions` },
+    { label: "Team", href: `#team` },
+    { label: "Contact", href: `mailto:hello@mitfreuden.com` },
+  ],
+  de: [
+    { label: "Angebot", href: `#angebot` },
+    { label: "Team", href: `#team` },
+    { label: "Kontakt", href: `mailto:hallo@mitfreuden.com` },
+  ],
+};
+const navLinks = navLinksMap[Astro.currentLocale];
 ---
 
-<nav class="nav-container">
+<nav>
   <!-- Hamburger button (mobile only) -->
   <button
-    class="hamburger flex h-8 w-8 flex-col items-center justify-center gap-1.5 md:hidden"
+    class="hamburger group relative z-50 flex h-8 w-8 flex-col items-center justify-center gap-1.5 md:hidden"
     aria-label="Toggle menu"
     aria-expanded="false"
   >
     <span
-      class="hamburger-line h-0.5 w-6 bg-gray-900 transition-all duration-300"
+      class="hamburger-line h-0.5 w-6 origin-center bg-gray-900 transition-all duration-300 group-[.is-open]:translate-y-2 group-[.is-open]:rotate-45"
     ></span>
     <span
-      class="hamburger-line h-0.5 w-6 bg-gray-900 transition-all duration-300"
+      class="hamburger-line h-0.5 w-6 bg-gray-900 transition-all duration-300 group-[.is-open]:opacity-0"
     ></span>
     <span
-      class="hamburger-line h-0.5 w-6 bg-gray-900 transition-all duration-300"
+      class="hamburger-line h-0.5 w-6 origin-center bg-gray-900 transition-all duration-300 group-[.is-open]:-translate-y-2 group-[.is-open]:-rotate-45"
     ></span>
   </button>
 
   <!-- Navigation links -->
-  <div class="nav-links hidden gap-2 md:flex">
+  <div class="nav-links hidden justify-between gap-8 md:flex">
     {
       navLinks.map((link) => (
-        <a href={link.href} class="transition-colors hover:underline">
+        <a
+          href={link.href}
+          class="text-neutral-500 transition-colors hover:underline"
+        >
           {link.label}
         </a>
       ))
@@ -44,46 +51,77 @@ const navLinks = navigationConfig[locale].map((item) => ({
 
   <!-- Mobile menu -->
   <div
-    class="mobile-menu fixed inset-0 z-40 hidden flex-col items-center justify-center gap-8 bg-orange-50 text-2xl"
+    class="mobile-menu fixed inset-0 z-40 hidden h-dvh flex-col bg-neutral-50 px-4 py-2 sm:px-6 [.is-open&]:flex"
   >
-    {
-      navLinks.map((link) => (
-        <a
-          href={link.href}
-          class="mobile-menu-link transition-colors hover:underline"
+    <a href={homeUrl} class="site-logo">
+      <div class="flex items-center gap-1">
+        <div
+          class="inline-block bg-linear-to-tr from-rose-600 via-rose-400 to-orange-300 bg-clip-text text-xl font-light tracking-tight text-transparent lg:text-2xl"
         >
-          {link.label}
-        </a>
-      ))
-    }
+          Mit Freuden
+        </div>
+        <svg
+          class="h-8 lg:h-10"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 40 40"
+          stroke="url(#grad1)"
+        >
+          <!-- Square Brackets [ ] - happy eyes ^^ -->
+          <defs>
+            <linearGradient id="grad1" x1="0%" y1="50%" x2="20%" y2="0%">
+              <stop
+                offset="0%"
+                style="stop-color:var(--color-rose-400);stop-opacity:1"></stop>
+              <stop
+                offset="100%"
+                style="stop-color:var(--color-orange-400);stop-opacity:1"
+              ></stop>
+            </linearGradient>
+          </defs>
+          <g>
+            <path
+              d="M 10 4 L 4 4 L 4 36 L 10 36"
+              fill="none"
+              stroke-width="1.5"
+              stroke-linecap="round"></path>
+            <path
+              d="M 30 4 L 36 4 L 36 36 L 30 36"
+              fill="none"
+              stroke-width="1.5"
+              stroke-linecap="round"></path>
+            <path
+              d="M 10 24 Q 20 32 30 24"
+              fill="none"
+              stroke-width="1.5"
+              stroke-linecap="round"></path>
+            <path
+              d="M 12 18 Q 14 15 16 18"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              fill="none"></path>
+            <path
+              d="M 24 18 Q 26 15 28 18"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              fill="none"></path>
+          </g>
+        </svg>
+      </div>
+    </a>
+    <div class="flex grow flex-col items-center justify-center gap-10 text-2xl">
+      {
+        navLinks.map((link) => (
+          <a
+            href={link.href}
+            class="mobile-menu-link transition-colors hover:underline"
+          >
+            {link.label}
+          </a>
+        ))
+      }
+    </div>
   </div>
 </nav>
-
-<style>
-  /* Keep hamburger above mobile menu */
-  .hamburger {
-    position: relative;
-    z-index: 50;
-  }
-
-  /* Hamburger animation when open */
-  .hamburger.is-open .hamburger-line:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .hamburger.is-open .hamburger-line:nth-child(2) {
-    opacity: 0;
-  }
-
-  .hamburger.is-open .hamburger-line:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
-  /* Mobile menu visibility */
-  .mobile-menu.is-open {
-    display: flex;
-  }
-</style>
 
 <script>
   const hamburger = document.querySelector(".hamburger");
