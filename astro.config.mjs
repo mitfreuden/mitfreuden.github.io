@@ -11,12 +11,12 @@ export default defineConfig({
     locales: ["de", "en"],
     defaultLocale: "en",
     fallback: {
-      "de": "en",
+      de: "en",
     },
     routing: {
       prefixDefaultLocale: true,
       redirectToDefaultLocale: false,
-      fallbackType: "rewrite"
+      fallbackType: "rewrite",
     },
   },
 
