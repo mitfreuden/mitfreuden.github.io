@@ -74,21 +74,271 @@ import clemens from "../../images/clemens.jpg";
         </h1>
       </div>
 
-      <div
-        class="font-serif text-4xl/tight tracking-tight text-neutral-600 sm:text-right sm:text-5xl/tight"
-      >
-        <p>Was bringt Freude ins&nbsp;Leben?</p>
-        <p>
-          Genau: richtig,<span
+      <div class="sm:text-right">
+        <p
+          class="font-serif text-4xl/tight tracking-tight text-neutral-600 md:text-5xl/tight"
+        >
+          Was bringt Freude ins&nbsp;Leben?<br />
+          Genau: so richtig,
+          <span
             class="bg-linear-to-tr from-rose-600 via-rose-400 to-orange-300 bg-clip-text text-transparent"
           >
-            <span class="italic">richtig</span>&nbsp;gut gemachte Software.</span
+            <span class="italic">richtig</span> gut gemachte Software.</span
           >
         </p>
-        <p class="mt-10 italic">Das finden wir auch.</p>
+        <p
+          class="mt-8 font-serif text-4xl/tight tracking-tight text-neutral-600 md:text-5xl/tight"
+        >
+          Und deshalb machen wir das auch.<br />
+          Seit 20 Jahren.
+        </p>
       </div>
     </div>
 
+    <div class="mx-auto mb-24 max-w-2xl pt-16 lg:mx-0 lg:mb-32 lg:max-w-none">
+      <h2
+        class="mb-8 font-serif text-4xl tracking-tight text-neutral-600 md:text-5xl"
+      >
+        Aber jetzt zu Ihnen.
+      </h2>
+
+      <p
+        class="mb-8 max-w-2xl font-sans text-lg/8 text-pretty text-neutral-600"
+      >
+        Sie kennen das vielleicht:
+      </p>
+
+      <div class="space-y-10">
+        <div>
+          <h3
+            class="mb-2 font-serif text-xl tracking-tight text-neutral-800 md:text-2xl"
+          >
+            <q>Bei wem bekomme ich die volle Aufmerksamkeit?</q>
+          </h3>
+          <p class="max-w-2xl font-sans text-lg/8 text-pretty text-neutral-600">
+            Große Agenturen jonglieren dutzende Projekte gleichzeitig. Bei uns
+            konzentriert sich jeder Entwickler auf <span
+              class="bg-linear-to-tr from-rose-600 via-rose-400 to-orange-300 bg-clip-text font-bold text-transparent"
+            >
+              maximal ein Projekt zur selben Zeit</span
+            >. Das bedeutet: volle Aufmerksamkeit, echtes Commitment, schnelle
+            Entscheidungen.
+          </p>
+        </div>
+
+        <div>
+          <h3
+            class="mb-2 font-serif text-xl tracking-tight text-neutral-800 md:text-2xl"
+          >
+            <q>Wer hilft mir von der Idee zur konkreten Lösung?</q>
+          </h3>
+          <p class="max-w-2xl font-sans text-lg/8 text-pretty text-neutral-600">
+            Wir warten nicht auf ein fertiges Lastenheft. Wir verstehen Ihr
+            Problem und <span
+              class="bg-linear-to-tr from-rose-600 via-rose-400 to-orange-300 bg-clip-text font-bold text-transparent"
+            >
+              entwickeln gemeinsam mit Ihnen die passende Lösung</span
+            >. Von der Idee über die Umsetzung bis zum Launch.
+          </p>
+        </div>
+
+        <div>
+          <h3
+            class="mb-2 font-serif text-xl tracking-tight text-neutral-800 md:text-2xl"
+          >
+            <q>Und danach? Wer bleibt wirklich langfristig an meiner Seite?</q>
+          </h3>
+          <p class="max-w-2xl font-sans text-lg/8 text-pretty text-neutral-600">
+            Software lebt und muss sich anpassen – aber wer bleibt dran, wenn
+            sich Anforderungen ändern? Deshalb gestalten wir Software von Anfang
+            an flexibel und erweiterbar, und <span
+              class="bg-linear-to-tr from-rose-600 via-rose-400 to-orange-300 bg-clip-text font-bold text-transparent"
+              >bleiben Ihr verlässlicher Partner</span
+            >, wenn sich Ihr Unternehmen weiterentwickelt.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="mx-auto mb-24 max-w-2xl pt-16 lg:mx-0 lg:mb-32 lg:max-w-none"
+      id="team"
+    >
+      <h2
+        class="mb-8 font-serif text-4xl tracking-tight text-neutral-600 md:text-5xl"
+      >
+        Vier erfahrene Entwickler. Ein direkter Draht.
+      </h2>
+
+      <p class="max-w-2xl font-sans text-lg/8 text-pretty text-neutral-600">
+        Bei uns sprechen Sie direkt mit den Menschen, die Ihr Projekt in- und
+        auswendig kennen. Keine Account Manager, keine Hierarchien, keine Stille
+        Post.
+      </p>
+
+      <ul
+        role="list"
+        class="mt-16 grid grid-cols-1 gap-y-16 md:grid-cols-2 md:gap-x-12 lg:mx-0 lg:max-w-none"
+      >
+        <li>
+          <Image
+            loading="lazy"
+            src={clemens}
+            alt=""
+            class="aspect-square w-32 rounded-full object-cover outline-1 -outline-offset-1 outline-black/5"
+            width="128"
+          />
+          <h3 class="mt-6 text-lg/8 font-semibold text-gray-900 sm:text-xl/8">
+            Clemens Helm
+          </h3>
+          <p class="mt-4 text-lg/8 text-pretty text-gray-600 lg:text-base/7">
+            Über 20 Jahre Erfahrung als Entwickler, CTO und VP Engineering.
+            Clemens denkt in Architekturen, die mitwachsen – und legt von Anfang
+            an Wert darauf, dass Code nicht nur funktioniert, sondern auch
+            dauerhaft verlässlich läuft.
+          </p>
+        </li>
+        <li>
+          <Image
+            loading="lazy"
+            src={christoph}
+            alt=""
+            class="aspect-square w-32 rounded-full object-cover outline-1 -outline-offset-1 outline-black/5"
+            width="128"
+          />
+          <h3
+            class="mt-6 text-lg/8 font-semibold text-neutral-900 sm:text-xl/8"
+          >
+            Christoph Lupprich
+          </h3>
+          <p class="mt-4 text-lg/8 text-pretty text-neutral-600 lg:text-base/7">
+            Ruby, Rails, PostgreSQL – seit über 15 Jahren Christophs Werkzeuge
+            der Wahl. Egal ob Sicherheitssysteme auf hoher See oder
+            Geodaten-Pipelines: Er weiß was es braucht damit aus einer Idee ein
+            echtes Produkt wird.
+          </p>
+        </li>
+        <li>
+          <Image
+            loading="lazy"
+            src={fritz}
+            alt=""
+            class="aspect-square w-32 rounded-full object-cover outline-1 -outline-offset-1 outline-black/5"
+            width="128"
+          />
+          <h3
+            class="mt-6 text-lg/8 font-semibold text-neutral-900 sm:text-xl/8"
+          >
+            Fritz Grabo
+          </h3>
+          <p class="mt-4 text-lg/8 text-pretty text-neutral-600 lg:text-base/7">
+            Seit über 20 Jahren baut Fritz Backend-Architekturen, die skalieren.
+            Er arbeitet zielorientiert an den Problemen, die wirklich zählen –
+            und findet dabei die Balance zwischen schneller Entwicklung und
+            solider Infrastruktur, vom Root-Server bis zur Cloud.
+          </p>
+        </li>
+        <li>
+          <Image
+            loading="lazy"
+            src={wolfgang}
+            alt=""
+            class="aspect-square w-32 rounded-full object-cover outline-1 -outline-offset-1 outline-black/5"
+            width="128"
+          />
+          <h3
+            class="mt-6 text-lg/8 font-semibold text-neutral-900 sm:text-xl/8"
+          >
+            Wolfgang Rittner
+          </h3>
+          <p class="mt-4 text-lg/8 text-pretty text-neutral-600 lg:text-base/7">
+            Software-Architekt seit über 20 Jahren, mit Hands-on-Mentalität.
+            Wolfgang versteht komplexe Systeme schnell, erkennt wo es hakt, und
+            liefert praktische Lösungen, die Projekte voranbringen.
+          </p>
+        </li>
+      </ul>
+    </div>
+
+    <div
+      class="mx-auto mb-24 max-w-2xl pt-16 lg:mx-0 lg:mb-32 lg:max-w-none"
+      id="angebot"
+    >
+      <h2
+        class="mb-8 font-serif text-4xl tracking-tight text-neutral-600 md:text-5xl"
+      >
+        Wie wir arbeiten
+      </h2>
+
+      <div class="space-y-10">
+        <div>
+          <h3
+            class="mb-2 font-serif text-xl tracking-tight text-neutral-800 md:text-2xl"
+          >
+            Das Fundament: 20 Jahre Erfahrung
+          </h3>
+          <p class="max-w-2xl font-sans text-lg/8 text-pretty text-neutral-600">
+            Einen Prototyp zu viben ist leicht – verlässliche Software zu
+            entwickeln, die über Jahre im Einsatz bleibt, ist eine andere
+            Geschichte. Wir haben gelernt, was <span
+              class="bg-linear-to-tr from-rose-600 via-rose-400 to-orange-300 bg-clip-text font-bold text-transparent"
+              >flexible, resiliente Systeme</span
+            >
+            auszeichnet, und was Projekte langfristig zum Erfolg führt.
+          </p>
+        </div>
+
+        <div>
+          <h3
+            class="mb-2 font-serif text-xl tracking-tight text-neutral-800 md:text-2xl"
+          >
+            Ihre Anforderungen, Ihre Software
+          </h3>
+          <p class="max-w-2xl font-sans text-lg/8 text-pretty text-neutral-600">
+            <span
+              class="bg-linear-to-tr from-rose-600 via-rose-400 to-orange-300 bg-clip-text font-bold text-transparent"
+              >Wir nehmen uns Zeit</span
+            >, Ihre Prozesse und Herausforderungen wirklich zu durchdringen.
+            Erst wenn wir verstehen, was Sie brauchen, entwickeln wir gemeinsam
+            mit Ihnen die beste Lösung.
+          </p>
+        </div>
+
+        <div>
+          <h3
+            class="mb-2 font-serif text-xl tracking-tight text-neutral-800 md:text-2xl"
+          >
+            Ein Entwickler, ein Projekt
+          </h3>
+          <p class="max-w-2xl font-sans text-lg/8 text-pretty text-neutral-600">
+            Jeder Entwickler konzentriert sich auf maximal ein Projekt zur
+            selben Zeit. Das bedeutet: direkte Kommunikation, tiefes Verständnis
+            für Ihren Kontext und <span
+              class="bg-linear-to-tr from-rose-600 via-rose-400 to-orange-300 bg-clip-text font-bold text-transparent"
+              >echte Verantwortung für das Ergebnis</span
+            >.
+          </p>
+        </div>
+
+        <div>
+          <h3
+            class="mb-2 font-serif text-xl tracking-tight text-neutral-800 md:text-2xl"
+          >
+            Gebaut für heute und morgen
+          </h3>
+          <p class="max-w-2xl font-sans text-lg/8 text-pretty text-neutral-600">
+            Wir denken in Jahren, nicht in Sprints. Unsere Lösungen sind von
+            Anfang an so konzipiert, dass sie <span
+              class="bg-linear-to-tr from-rose-600 via-rose-400 to-orange-300 bg-clip-text font-bold text-transparent"
+              >mit Ihren Anforderungen mitwachsen</span
+            >
+            können – technisch solide, wartbar und erweiterbar.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!--
     <div class="relative -z-50 mx-auto mb-10 lg:mb-20">
       <div
         class="-mx-4 overflow-hidden bg-linear-to-b from-orange-100/60 to-transparent px-6 py-12 sm:-mx-6 sm:px-10 sm:py-16 md:-mx-6 lg:-mx-8 lg:rounded-3xl lg:bg-linear-to-br lg:to-orange-100/80"
@@ -130,13 +380,11 @@ import clemens from "../../images/clemens.jpg";
         </div>
       </div>
     </div>
+    -->
 
-    <div
-      class="mx-auto mb-32 max-w-2xl pt-24 lg:mx-0 lg:mb-48 lg:max-w-none"
-      id="angebot"
-    >
+    <div class="mx-auto mb-24 max-w-2xl pt-16 lg:mx-0 lg:mb-32 lg:max-w-none">
       <h2
-        class="mb-3 font-serif text-4xl tracking-tight text-neutral-600 md:mb-5 md:text-5xl"
+        class="mb-8 font-serif text-4xl tracking-tight text-neutral-600 md:text-5xl"
       >
         Umfassende Lösungen
       </h2>
@@ -149,7 +397,7 @@ import clemens from "../../images/clemens.jpg";
       </p>
 
       <dl
-        class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 text-base/7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+        class="mx-auto mt-12 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-12 text-base/7 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
       >
         <div>
           <dt class="font-semibold text-neutral-800">Web-basiert</dt>
@@ -197,25 +445,21 @@ import clemens from "../../images/clemens.jpg";
       </dl>
     </div>
 
-    <div class="mx-auto mb-32 max-w-2xl lg:mb-48 lg:max-w-none">
-      <h3
-        class="mb-3 font-serif text-3xl tracking-normal text-neutral-600 md:mb-5 md:text-4xl"
+    <div class="mx-auto mb-24 max-w-2xl pt-16 lg:mb-32 lg:max-w-none">
+      <h2
+        class="mb-8 font-serif text-4xl tracking-tight text-neutral-600 md:text-5xl"
       >
-        Zukunftssicher durch erprobte Technologie
-      </h3>
+        Zukunftssicher durch erprobte Technologien
+      </h2>
 
       <p class="max-w-2xl font-sans text-lg/8 text-pretty">
         Wir setzen auf <span
           class="bg-linear-to-tr from-rose-600 via-rose-400 to-orange-300 bg-clip-text font-bold text-transparent"
           >bewährte, zukunftssichere Technologien</span
-        >, die mit Ihrem Business mitwachsen. Unser Fokus liegt auf B2B-Lösungen
-        wie zum Beispiel Workflow-Automatisierung, Datenvisualisierung oder
-        komplexen Logistiksystemen, die auch über Jahre erfolgreich im Einsatz
-        sind. Wir liefern Software nicht nur schnell und sicher, sondern auch
-        skalierbar – von Startups bis zu Enterprise-Lösungen.
+        >, die mit Ihrem Unternehmen mitwachsen.
       </p>
 
-      <div class="mx-auto mt-16">
+      <div class="mx-auto mt-12">
         <div
           class="-mx-4 grid grid-cols-2 gap-0.5 overflow-hidden sm:-mx-6 md:-mx-6 md:grid-cols-3 lg:-mx-8 lg:rounded-3xl"
         >
@@ -250,126 +494,6 @@ import clemens from "../../images/clemens.jpg";
       </div>
     </div>
 
-    <div
-      class="mx-auto mb-16 max-w-2xl pt-24 lg:mx-0 lg:mb-30 lg:max-w-none"
-      id="team"
-    >
-      <h2
-        class="mb-3 font-serif text-4xl tracking-tight text-neutral-600 md:mb-5 md:text-5xl"
-      >
-        Gemeinsam
-      </h2>
-
-      <p
-        class="mb-3 max-w-2xl font-sans text-lg/8 text-pretty text-neutral-600"
-      >
-        Für uns ist Softwareentwicklung mehr als nur Code schreiben.
-        <br />
-        Wir <span
-          class="bg-linear-to-tr from-rose-600 via-rose-400 to-orange-300 bg-clip-text font-bold text-transparent"
-          >leben Ihre Projekte</span
-        > mit, verstehen Ihre Ziele und entwickeln Lösungen, die wirklich zu Ihnen
-        passen. Keine Standardpakete, keine halben Sachen.
-      </p>
-      <p class="max-w-2xl font-sans text-lg/8 text-pretty text-neutral-600">
-        Unser Team hat Projekte in den unterschiedlichsten Bereichen umgesetzt –
-        von <span
-          class="bg-linear-to-tr from-rose-600 via-rose-400 to-orange-300 bg-clip-text font-bold text-transparent"
-          >Retail über Energie bis hin zu Warehouse-Logistik</span
-        >. Jede Branche hat ihre eigenen Herausforderungen, und wir wissen, wie
-        man sie meistert. So entsteht maßgeschneiderte Software, die Ihr
-        Business voranbringt und Ihnen und Ihrem Team täglich aufs Neue Freude
-        bereitet.
-      </p>
-
-      <ul
-        role="list"
-        class="mt-20 grid grid-cols-1 gap-y-20 md:grid-cols-2 md:gap-x-18 lg:mx-0 lg:max-w-none"
-      >
-        <li>
-          <Image
-            loading="lazy"
-            src={clemens}
-            alt=""
-            class="aspect-square w-32 rounded-full object-cover outline-1 -outline-offset-1 outline-black/5"
-            width="128"
-          />
-          <h3 class="mt-6 text-lg/8 font-semibold text-gray-900 sm:text-xl/8">
-            Clemens Helm
-          </h3>
-          <!-- <p class="text-base/7 text-gray-600">TBD</p> -->
-          <p class="mt-4 text-lg/8 text-pretty text-gray-600 lg:text-base/7">
-            Über 20 Jahre Erfahrung als Entwickler, CTO und VP Engineering.
-            Clemens denkt in Architekturen, die mitwachsen – und legt von Anfang
-            an Wert darauf, dass Code nicht nur funktioniert, sondern auch
-            dauerhaft verlässlich läuft.
-          </p>
-        </li>
-        <li>
-          <Image
-            loading="lazy"
-            src={christoph}
-            alt=""
-            class="aspect-square w-32 rounded-full object-cover outline-1 -outline-offset-1 outline-black/5"
-            width="128"
-          />
-          <h3
-            class="mt-6 text-lg/8 font-semibold text-neutral-900 sm:text-xl/8"
-          >
-            Christoph Lupprich
-          </h3>
-          <!-- <p class="text-base/7 text-neutral-600">TBD</p> -->
-          <p class="mt-4 text-lg/8 text-pretty text-neutral-600 lg:text-base/7">
-            Ruby, Rails, PostgreSQL – seit über 15 Jahren Christophs Werkzeuge
-            der Wahl. Egal ob Sicherheitssysteme auf hoher See oder
-            Geodaten-Pipelines: Er weiß was es braucht damit aus einer Idee ein
-            echtes Produkt wird.
-          </p>
-        </li>
-        <li>
-          <Image
-            loading="lazy"
-            src={fritz}
-            alt=""
-            class="aspect-square w-32 rounded-full object-cover outline-1 -outline-offset-1 outline-black/5"
-            width="128"
-          />
-          <h3
-            class="mt-6 text-lg/8 font-semibold text-neutral-900 sm:text-xl/8"
-          >
-            Fritz Grabo
-          </h3>
-          <!-- <p class="text-base/7 text-neutral-600">TBD</p> -->
-          <p class="mt-4 text-lg/8 text-pretty text-neutral-600 lg:text-base/7">
-            Seit über 20 Jahren baut Fritz Backend-Architekturen, die skalieren.
-            Er arbeitet zielorientiert an den Problemen, die wirklich zählen –
-            und findet dabei die Balance zwischen schneller Entwicklung und
-            solider Infrastruktur, vom Root-Server bis zur Cloud.
-          </p>
-        </li>
-        <li>
-          <Image
-            loading="lazy"
-            src={wolfgang}
-            alt=""
-            class="aspect-square w-32 rounded-full object-cover outline-1 -outline-offset-1 outline-black/5"
-            width="128"
-          />
-          <h3
-            class="mt-6 text-lg/8 font-semibold text-neutral-900 sm:text-xl/8"
-          >
-            Wolfgang Rittner
-          </h3>
-          <!-- <p class="text-base/7 text-neutral-600">TBD</p> -->
-          <p class="mt-4 text-lg/8 text-pretty text-neutral-600 lg:text-base/7">
-            Software-Architekt seit über 20 Jahren, mit Hands-on-Mentalität.
-            Wolfgang versteht komplexe Systeme schnell, erkennt wo es hakt, und
-            liefert praktische Lösungen, die Projekte voranbringen.
-          </p>
-        </li>
-      </ul>
-    </div>
-
     <div class="mx-auto -mb-16 lg:mb-10">
       <div
         class="-mx-4 overflow-hidden bg-orange-100/50 px-6 pt-12 pb-24 sm:-mx-6 sm:px-10 sm:pt-16 sm:pb-32 md:-mx-6 lg:-mx-8 lg:rounded-3xl lg:pb-24"
@@ -384,12 +508,14 @@ import clemens from "../../images/clemens.jpg";
               Klingt gut?
             </h2>
             <p
-              class="mb-6 max-w-2xl font-serif text-4xl/12 text-pretty text-neutral-600 md:max-w-3xl"
+              class="mt-6 mb-6 max-w-2xl font-sans text-xl/8 text-pretty text-neutral-600 md:max-w-3xl"
             >
-              Dann lassen Sie uns reden.
+              Dann lassen Sie uns reden. In einem unverbindlichen Erstgespräch
+              klären wir, ob wir zueinander passen und wie wir Sie unterstützen
+              können.
             </p>
             <p
-              class="max-w-2xl font-serif text-4xl/12 text-pretty text-neutral-600 italic md:max-w-3xl"
+              class="max-w-2xl font-sans text-xl/8 text-pretty text-neutral-600 italic md:max-w-3xl"
             >
               Wir&nbsp;freuen uns auf Ihr Projekt.
             </p>
