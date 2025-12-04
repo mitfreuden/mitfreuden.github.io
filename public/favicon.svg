@@ -1,9 +1,17 @@
-<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 128 128">
-  <circle cx="64" cy="64" r="48" stroke-width="8"/>
-  <style>
-    circle { stroke: #000; }
-    @media (prefers-color-scheme: dark) {
-      circle { stroke: #FFF; }
-    }
-  </style>
+<svg
+    class="h-8 lg:h-10"
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 40 40"
+    stroke="#000000"
+    fill="none"
+    stroke-width="1.5"
+    stroke-linecap="round"
+    >
+  <g>
+    <path d="M 10 4 L 4 4 L 4 36 L 10 36"></path>
+    <path d="M 30 4 L 36 4 L 36 36 L 30 36"></path>
+    <path d="M 10 24 Q 20 32 30 24"></path>
+    <path d="M 12 18 Q 14 15 16 18"></path>
+    <path d="M 24 18 Q 26 15 28 18"></path>
+  </g>
 </svg>
