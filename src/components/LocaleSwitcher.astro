@@ -1,7 +1,5 @@
 ---
-import { getRelativeLocaleUrl } from "astro:i18n";
 
-const currentPath = Astro.url.pathname.replace(/^\/(de|en)/, "") || "/";
 ---
 
 <div class="relative z-0">
@@ -55,13 +53,11 @@ const currentPath = Astro.url.pathname.replace(/^\/(de|en)/, "") || "/";
     <div
       class="w-40 shrink rounded-xl bg-white p-2 text-sm/6 font-semibold text-gray-900 shadow-lg outline-1 outline-gray-900/5"
     >
-      <a
-        href={getRelativeLocaleUrl("de", currentPath)}
-        class="block p-2 transition-all hover:text-rose-600">Deutsch</a
+      <a href="/de" class="block p-2 transition-all hover:text-rose-600"
+        >Deutsch</a
       >
-      <a
-        href={getRelativeLocaleUrl("en", currentPath)}
-        class="block p-2 transition-all hover:text-rose-600">English</a
+      <a href="/en" class="block p-2 transition-all hover:text-rose-600"
+        >English</a
       >
     </div>
   </el-popover>
